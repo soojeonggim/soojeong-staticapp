@@ -8,5 +8,21 @@
 <article class="container">
   <h1>Ships of the Golden Age of pirates</h1>
   <p>Intro text here.</p>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for ship in pirates.ships %}
+    <div class="col">
+      <div class="card h-100 bg-dark text-white">
+        <div class="card-body">
+          <h5 class="card-title">{{ ship.ship_name }}</h5>
+          <h6>Captain: {{ ship.captain }}</h6>
+          <p class="card-text">{{ ship.blurb }}</p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ ship.source }}" class="card-link text-info">More about the ship</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </article>
 {% endblock %}

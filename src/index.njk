@@ -5,18 +5,22 @@
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-12 col-md-8 offset-md-2">
       <h1>A pirate's life is for me</h1>
       <p>Hempen halter mizzenmast deadlights gaff pillage starboard jack lee Blimey draught. Man-of-war piracy black jack sutler Yellow Jack keel provost overhaul execution dock rigging. Log quarterdeck dead men tell no tales red ensign gibbet grog blossom bilge Nelsons folly code of conduct gunwalls.</p>
     </div>
   </div>
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {% for ship in pirates.ships %}
     <div class="col">
-      <div class="card">
+      <div class="card h-100">
         <div class="card-body">
           <h5 class="card-title">{{ ship.ship_name }}</h5>
+          <h6>Captain: {{ ship.captain }}</h6>
           <p class="card-text">{{ ship.blurb }}</p>
+        </div>
+        <div class="card-footer">
+          <a href="{{ ship.source }}" class="card-link">More about the ship</a>
         </div>
       </div>
     </div>
